@@ -42,6 +42,8 @@ function calculateLoad(grid: string[][]) {
 	return load
 }
 
+let gridCopy = grid.map(x => x);
+console.log("Part 1:", calculateLoad(tiltGrid(gridCopy, 0)))
 const previousGrids = new Map<string, number>()
 let previousGrid: string[][];
 let loopLength = 0;
@@ -67,5 +69,5 @@ for(let i = 0; i < remaining; i++) {
 		grid = tiltGrid(grid, j); 
 	}
 }
+console.log("Part 2:", calculateLoad(grid), '\nVisualisation:')
 console.log(grid.map(row => row.join('')).join('\n'))
-console.log(calculateLoad(grid))
