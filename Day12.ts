@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 let lines = fs.readFileSync('./inputs/day12.txt', 'utf-8').split("\r\n");
 
+// function from github.com/Nathan-Fenner
 function memo<Arguments extends unknown[], Result>(func: (...args: Arguments) => Result): (...args: Arguments) => Result {
 	const resultMap = new Map<string, Result>();
 	return (...args): Result => {
